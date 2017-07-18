@@ -7,10 +7,8 @@
     tools:context="com.example.student.rpointdemo.MainActivity">
 
 
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+
+
     <RadioButton android:id="@+id/once_a_month"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,18 +19,19 @@
         android:layout_height="wrap_content"
         android:text="Once a Year"
         android:onClick="onRadioButtonClicked"/>
-        <RadioButton android:id="@+id/once_a_day"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Once a Day"
-            android:onClick="onRadioButtonClicked"/>
-</RadioGroup>
+    <RadioButton android:id="@+id/once_a_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Once a Day"
+        android:onClick="onRadioButtonClicked"/>
+
 
     <EditText
         android:id="@+id/freq_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Hoe Frequently do you drink"
-        />
+        android:hint="How Frequently do you drink"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp" />
 
 </android.support.constraint.ConstraintLayout>
