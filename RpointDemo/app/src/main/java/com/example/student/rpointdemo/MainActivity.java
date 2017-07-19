@@ -133,16 +133,29 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             weight = Integer.parseInt(mWeightInput.getText().toString());
-            setContentView(R.layout.f_page);
-            text=""+weight;
-            toast=Toast.makeText(context,text,duration);
-            toast.show();
-            goToFreqPage();
+            if(weight<20||weight>300){
+                text="Enter Your Weight";
+                toast=Toast.makeText(context,text,duration);
+                toast.show();
+            }
+            else {
+                text = "" + weight;
+                toast = Toast.makeText(context, text, duration);
+                toast.show();
+                goToFreqPage();
+            }
 
         }
 
     }
 
+
+
+    public void goToFreqPage(){
+        setContentView(R.layout.f_page);
+        makeFrequencyLists();
+
+    }
 //Build the two lists in the F page
     public void makeFrequencyLists() {
 
@@ -167,11 +180,7 @@ public class MainActivity extends AppCompatActivity {
         spinner_over_time.setAdapter(adapter_over_time);
     }
 
-    public void goToFreqPage(){
-        setContentView(R.layout.f_page);
-        makeFrequencyLists();
 
-    }
 
     public void onFreqClick(View view){
         Context context = getApplicationContext();
@@ -182,26 +191,14 @@ public class MainActivity extends AppCompatActivity {
         Spinner spinner_times = (Spinner) findViewById(R.id.times_id);
         Spinner spinner_over_time = (Spinner) findViewById(R.id.over_time_id);
         //getting the information from spinner
-
         freq= spinner_times.getSelectedItem().toString()+" a "+spinner_over_time.getSelectedItem().toString();
+
         text = freq;
 
 
         toast = Toast.makeText(context, text, duration);
         toast.show();
 
-        if(freq.compareTo("choose a choose")==0){
-            text="choose an option from the lists";
-            toast=Toast.makeText(context,text,duration);
-            toast.show();
-        }
-        else {
-            text = freq;
-
-
-            toast = Toast.makeText(context, text, duration);
-            toast.show();
-        }
     }
 
 
