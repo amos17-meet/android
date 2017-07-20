@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -17,26 +18,25 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
 
-
+    
     private EditText mAgeInput;
     private EditText mWeightInput;
-    private int times;
-    private int overTime;
+
     //befor choosing
-    private int age=-1;
-    private double weight;
+    public static int age=-1;
+    public static double weight;
     //before choosing gender=-1
-    private int gender=-1;//male=0, female=1
-    private String freq;
+    public static int gender=-1;//male=0, female=1
+    public static String freq;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gender_page);
 
-
-
         mWeightInput=(EditText) findViewById(R.id.weight_input);
     }
+    //bring element to the back of the view
+
 
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
